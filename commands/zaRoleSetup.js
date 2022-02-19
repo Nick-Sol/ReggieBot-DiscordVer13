@@ -793,6 +793,46 @@ module.exports = {
                 interaction.reply("Role Menu Setup")
                 break;
             }
+            case "WargamingGames":{
+                row = new MessageActionRow()
+                .addComponents(
+                    new MessageSelectMenu()
+                    .setCustomId('role')
+                    .setPlaceholder('Nothing selected')
+                    .setMaxValues(5)
+                    .addOptions([
+                        {
+                            label: '40k',
+                            description: '',
+                            value: '40k'
+                        },
+                        {
+                            label: 'Age of Sigmar',
+                            description: '',
+                            value: 'Age of Sigmar'
+                        },
+                        {
+                            label: 'Armada',
+                            description: '',
+                            value: 'Armada'
+                        },
+                        {
+                            label: 'Blackstone Fortress',
+                            description: '',
+                            value: 'Blackstone Fortress'
+                        },
+                        {
+                            label: 'Bloodbowl',
+                            description: '',
+                            value: 'Bloodbowl'
+                        },
+                    ]),
+                );
+                test.send(/*compoenets/buttons*/{ content: 'Select the games you play:'})
+                test.send(/*compoenets/buttons*/{ content: 'Select your games from the drop down menu!', components: [row] })
+                interaction.reply("Role Menu Setup")
+                break;
+            }
             default:
                 break;
         }
